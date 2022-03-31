@@ -67,6 +67,14 @@ fortio.exe server
 ```
 (at the prompt, allow the windows firewall to let connections in)
 
+About run locally
+
+```Shell
+go env -w GOPROXY=https://goproxy.cn
+go build 
+./fortio server
+```
+
 Once `fortio server` is running, you can visit its web UI at [http://localhost:8080/fortio/](http://localhost:8080/fortio/)
 
 You can get a preview of the reporting/graphing UI at [https://fortio.istio.io/](https://fortio.istio.io/)

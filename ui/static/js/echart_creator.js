@@ -203,6 +203,7 @@ function toggleDuration (el) {
     d.value = lastDuration
   }
 }
+const customHeaderElement = '<input type="text" name="H" size=40 value="" /> <br />'
 function addCustomHeader () {
   const customHeaderElements = document.getElementsByName('H')
   const lastElement = customHeaderElements[customHeaderElements.length - 1]
