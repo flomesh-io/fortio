@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head><title>Φορτίο v{{.Version}}</title>
-  <script src="{{.ChartJSPath}}"></script>
-  <script src="{{.Version}}/static/js/fortio_chart.js"></script>
+	<script src="{{.Version}}/static/js/echarts.min.js"></script>
   <link rel="icon" href="{{.Version}}/static/img/favicon.ico"/>
   <link rel="stylesheet" href="{{.Version}}/static/css/fortio.css">
+	<script src="{{.Version}}/static/js/echart_creator.js"></script>
 </head>
 {{template "header" .}}
 <h1>Φορτίο (fortio) v{{.Version}}{{if not .DoLoad}} control UI{{end}}</h1>
@@ -18,10 +18,10 @@
   <br />
   <button type="submit" onclick='javascript:fetch("./?stop=Stop&runid={{.RunID}}");'>Interrupt</button>
 </div>
-<script>runTestForDuration({{.TestExpectedDurationSeconds}})</script>
-<div class="chart-container" id="cc1" style="position: relative; height:75vh; width:95vw; display:none;">
-  <canvas id="chart1"></canvas>
-</div>
+<script>
+runTestForDuration({{.TestExpectedDurationSeconds}})</script>
+<div id="DataChart" style="height: 500px"></div>
+<div id="PercentilesChart" style="height: 500px"></div>
 <div id="update" style="visibility: hidden">
   <form id="updtForm" action="javascript:updateChart()">
     <input type="submit" value="Update:" />
